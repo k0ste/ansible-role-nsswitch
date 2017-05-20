@@ -1,0 +1,9 @@
+{{ '## ' + 'nsswitch.conf' }}
+{{ '# ' + ansible_managed }}
+{{ '# ' + 'Do not edit manually' }}
+
+{% for k,v in hostvars[inventory_hostname]['nsswitch'].items() %}
+{% if v is defined and v != '' %}
+{{ k + ': ' + v | join( ' ' ) }}
+{% endif %}
+{% endfor %}

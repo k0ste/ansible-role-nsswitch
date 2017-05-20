@@ -1,0 +1,7 @@
+---
+# /etc not exists, something wrong with this system
+- name: Check /etc exists
+  stat:
+    path: "/etc"
+  register: "etc_stat"
+  failed_when: "etc_stat.stat.exists == False"

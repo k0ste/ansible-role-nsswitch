@@ -1,0 +1,12 @@
+---
+- name: Deploy nsswitch.conf
+  template:
+    src: "nsswitch.j2"
+    dest: "/etc/nsswitch.conf"
+    group: "root"
+    owner: "root"
+    mode: "0644"
+    force: "yes"
+  when:
+  - "hostvars[inventory_hostname]['nsswitch'] is defined"
+  - "hostvars[inventory_hostname]['nsswitch'] != ''"
