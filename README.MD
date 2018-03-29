@@ -1,24 +1,20 @@
-ansible-nsswitch
-==================
+# ansible-nsswitch
 
-The Name Service Switch (NSS) configuration file, `/etc/nsswitch.conf`, is used by
-the GNU C Library and certain other applications to determine the sources from
-which to obtain name-service information in a range of categories, and in what
-order. Each category of information is identified by a database name.
+The Name Service Switch (NSS) configuration file, `/etc/nsswitch.conf`, is used
+by the GNU C Library and certain other applications to determine the sources
+from which to obtain name-service information in a range of categories, and in
+what order. Each category of information is identified by a database name.
 
-Ansible versions
------------------
+## Requirements
 
-Ansible 2.0 is required.
+* Ansible 2.4;
 
-Extra
-------
+## Extra
 
 database source is not validated and pass as-is. For all possible sources please
 consult `nsswitch.conf(5)`.
 
-Example configuration
--------------------------
+## Example configuration
 
 ```yaml
 ---
@@ -36,7 +32,8 @@ nsswitch:
   - 'mymachines'
   - 'systemd'
   - 'ldap'
-# hosts - host names and numbers, used by gethostbyname(3) and related functions.
+# hosts - host names and numbers, used by gethostbyname(3) and related
+# functions.
   hosts:
   - 'files'
   - 'mymachines'
@@ -44,14 +41,16 @@ nsswitch:
   - '[!UNAVAIL=return]'
   - 'dns'
   - 'myhostname'
-# initgroups - supplementary group access list, used by getgrouplist(3) function.
+# initgroups - supplementary group access list, used by getgrouplist(3)
+# function.
   initgroups: ''
 # netgroup - network-wide list of hosts and users, used for access rules.
 # C libraries before glibc 2.1 supported netgroups only over NIS.
   netgroup:
   - 'ldap'
   - 'files'
-# networks - network names and numbers, used by getnetent(3) and related functions.
+# networks - network names and numbers, used by getnetent(3) and related
+# functions.
   networks:
   - 'files'
   - 'ldap'

@@ -1,6 +1,6 @@
 ---
 # /etc not exists, something wrong with this system
-- name: Check /etc exists
+- name: nsswitch | Check /etc exists
   stat:
     path: "/etc"
   register: "etc_stat"

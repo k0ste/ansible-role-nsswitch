@@ -1,3 +1,6 @@
 ---
-- include: pre_requisite.yml
-- include: deploy_nsswitch.yml
+- include_tasks: pre_requisite.yml
+- include_tasks: deploy_nsswitch.yml
+  when:
+  - "hostvars[inventory_hostname]['nsswitch'] is defined"
+  - "hostvars[inventory_hostname]['nsswitch'] != ''"
