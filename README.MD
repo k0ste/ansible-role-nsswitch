@@ -7,7 +7,7 @@ what order. Each category of information is identified by a database name.
 
 ## Requirements
 
-* Ansible 2.4;
+* Ansible 2.5+;
 
 ## Extra
 
