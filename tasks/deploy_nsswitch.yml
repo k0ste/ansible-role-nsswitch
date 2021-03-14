@@ -1,6 +1,6 @@
 ---
 - name: nsswitch | Deploy nsswitch.conf
-  template:
+  ansible.builtin.template:
     src: "nsswitch.j2"
     dest: "/etc/nsswitch.conf"
     group: "root"
