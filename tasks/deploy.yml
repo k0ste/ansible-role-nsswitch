@@ -1,5 +1,5 @@
 ---
-- name: nsswitch | Deploy nsswitch.conf
+- name: "nsswitch | Deploy nsswitch.conf"
   ansible.builtin.template:
     src: "nsswitch.j2"
     dest: "/etc/nsswitch.conf"

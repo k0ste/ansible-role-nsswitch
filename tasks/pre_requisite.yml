@@ -1,7 +1,7 @@
 ---
 # /etc not exists, something wrong with this system
-- name: nsswitch | Check /etc exists
+- name: "nsswitch | Check /etc exists"
   ansible.builtin.stat:
     path: "/etc"
-  register: "etc_stat"
-  failed_when: "etc_stat.stat.exists == False"
+  register: "nsswitch_etc_stat"
+  failed_when: "nsswitch_etc_stat.stat.exists == False"
