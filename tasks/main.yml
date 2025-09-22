@@ -9,3 +9,4 @@
     - "hostvars[inventory_hostname]['nsswitch'] is defined"
     - "hostvars[inventory_hostname]['nsswitch'] != []"
     - "hostvars[inventory_hostname]['nsswitch'] != ''"
+    - "hostvars[inventory_hostname]['nsswitch'] != None"

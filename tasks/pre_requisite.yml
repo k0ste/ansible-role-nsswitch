@@ -4,4 +4,4 @@
   ansible.builtin.stat:
     path: "/etc"
   register: "nsswitch_etc_stat"
-  failed_when: "nsswitch_etc_stat.stat.exists == False"
+  failed_when: "nsswitch_etc_stat['stat']['exists'] == False"
